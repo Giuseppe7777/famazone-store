@@ -1,0 +1,56 @@
+
+.container {
+  max-width: 1200px;
+}
+
+.hero-section {
+  margin-bottom: 50px;
+}
+
+.hero-image {
+  width: 70%;
+  height: auto;
+  margin-top: 20px;
+}
+
+.about-us .about-image,
+.why-us .why-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.about-us,
+.why-us {
+  padding: 30px 0;
+}
+
+.about-us h2,
+.why-us h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.about-us p,
+.why-us p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.about-us ul,
+.why-us ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin-top: 15px;
+}
+
+.bg-light {
+  background-color: #f8f9fa;
+}
+
+@media (max-width: 768px) {
+  .about-us .about-image,
+  .why-us .why-image {
+    margin-top: 20px;
+  }
+}

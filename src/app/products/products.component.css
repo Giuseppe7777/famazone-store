@@ -1,0 +1,30 @@
+.card {
+  height: auto;                
+  display: flex;
+  flex-direction: column;        
+}
+
+.card-img-top {
+  display: block;
+  height: 300px;                
+  object-fit: contain; 
+  padding: 25px;           
+}
+
+.card-body {
+  flex: 1 0 auto;             
+  display: flex;
+  flex-direction: column; 
+  margin-bottom: 20px; 
+}      
+
+.card-title, .card-text, .btn {
+  margin-bottom: 15px;          
+}
+
+.btn {
+  align-self: center;           
+  flex-shrink: 0; 
+  margin-bottom: 20px;  
+  padding-inline: 30px;            
+}

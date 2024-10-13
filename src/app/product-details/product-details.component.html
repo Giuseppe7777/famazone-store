@@ -1,0 +1,15 @@
+<div>
+
+  <div class="card mb-3">
+    <img [src]="product.profileImageUrl" class="card-img-top w-25" [alt]="product.productName">
+    <div class="card-body">
+      <h5 class="card-title"><strong>Model:</strong> {{product.productName}}</h5>
+      <p class="card-text"><strong>Brand:</strong> {{product.brand}}</p>
+      <p class="card-text"><strong>Description:</strong> {{product.description}}</p>
+      <p class="card-text"><strong>Extra:</strong> {{product.features}}</p>
+      <p class="card-text"><strong>Price:</strong> {{product.price | currency:"Euro"}}</p>
+      <button (click)="addToCart()" class="btn btn-success px-5"><strong>I BYE IT</strong></button>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,26 @@
+<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
+
+  @for(product of products; track $index){
+
+    <div>
+      <div class="card my-4 mx-auto">
+        <img 
+          [src]="product.profileImageUrl" 
+          class="card-img-top img-fluid" 
+          alt="..."
+        >
+        <div class="card-body">
+          <h5 class="card-title">Brand: {{ product.brand }}</h5>
+          <h5 class="card-title">Model: {{ product.productName }}</h5>
+          <h6 class="card-title">Country: {{ product.originCountry }}</h6>
+          <p class="card-title">Warranty: {{ product.warrantyYears }} years</p>
+          <p class="card-text">Description: Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <h6 class="card-title">Price: {{ product.price | currency: 'EUR'}}</h6>
+        </div>
+        <button routerLink="/products/{{$index}}" class="btn btn-success">Details</button>
+      </div>
+    </div>
+
+  }
+
+</div>
