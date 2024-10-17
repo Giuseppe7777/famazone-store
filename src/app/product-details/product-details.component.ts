@@ -12,8 +12,10 @@ import { CartService } from '../cart.service';
 
 export class ProductDetailsComponent {
   product:ProductModel;
+  isAddedToCart: boolean = false;  
+
   constructor
-  (
+  ( 
     private route: ActivatedRoute,
     private cartService: CartService
   ) {   
@@ -22,6 +24,12 @@ export class ProductDetailsComponent {
   }
 
   addToCart() {
-    this.cartService.onAddToCart(this.product);    
+    this.cartService.onAddToCart(this.product);     
+    this.isAddedToCart = true;
+
+    setTimeout(() => {
+      this.isAddedToCart = false;
+    }, 500);
+
   }
 }

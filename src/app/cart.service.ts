@@ -39,12 +39,18 @@ export class CartService {
   // Method for calculating "Service" (10%)
   getServiceFee(): number {
     const total = this.getTotal();
-    return total * 0.10;  // 10% від загальної суми
+    return total * 0.10;  // 10% of the total amount
+  }
+
+  getTotalWithServiceFee() {
+    const total = this.getTotal(); 
+    const totalSF = this.getServiceFee(); 
+    return total + totalSF;
   }
 
   // The method for calculating the discount (15%) if the amount is more than 40 euros
   getDiscountedTotal(): number {
-    const total = this.getTotal() + this.getServiceFee();  // Total amount including service
+    const total = this.getTotalWithServiceFee();  // Total amount including service
     if (total > 40) {
       return total * 0.85;  // 15% discount
     }

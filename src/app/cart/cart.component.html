@@ -19,19 +19,24 @@
 
   <!-- Output of the total amount -->
   <tr>
-    <td colspan="4" class="text-end"><strong>Total Price:</strong></td>
+    <td colspan="4" class="text-end"><strong>Price:</strong></td>
     <td>{{ total | currency: 'EUR' }}</td>
   </tr>
 
   <!-- Withdrawal of 10% of the service -->
   <tr>
-    <td colspan="4" class="text-end"><strong>Service Fee (10%):</strong></td>
+    <td colspan="4" class="text-end"><strong>Delivery (10%):</strong></td>
     <td>{{ serviceFee | currency: 'EUR' }}</td>
+  </tr>
+
+  <tr>
+    <td colspan="4" class="text-end"><strong>Price with Delivery (10%):</strong></td>
+    <td>{{ priceWithServiceFee | currency: 'EUR' }}</td>
   </tr>
 
   <!-- Withdrawal of the total amount with a discount -->
   <tr>
-    <td colspan="4" class="text-end"><strong>Total after Discount:</strong></td>
+    <td colspan="4" class="text-end"><strong>Total after Discount 15%:</strong></td>
     <td>{{ discountedTotal | currency: 'EUR' }}</td>
   </tr>
 </table>

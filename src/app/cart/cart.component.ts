@@ -22,11 +22,13 @@ export class CartComponent {
   total: number;
   serviceFee: number;
   discountedTotal: number;
+  priceWithServiceFee: number;
 
   constructor(private cartService: CartService) {
     this.productsFromCart = cartService.getProducts();
     this.total = cartService.getTotal();
     this.serviceFee = cartService.getServiceFee();
+    this.priceWithServiceFee = cartService.getTotalWithServiceFee();
     this.discountedTotal = cartService.getDiscountedTotal();
   }
 }

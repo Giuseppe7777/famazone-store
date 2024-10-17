@@ -2,6 +2,14 @@
   height: auto;                
   display: flex;
   flex-direction: column;        
+} 
+
+.card-size {
+  width: 50%;
+}
+
+.img-size {
+  width: 25%;
 }
 
 .card-img-top {
@@ -25,6 +33,93 @@
 .btn {
   align-self: center;           
   flex-shrink: 0; 
-  margin-bottom: 20px;  
-  padding-inline: 30px;            
+  margin-bottom: 10px; 
+  width: 120px;           
 }
+
+.buttons-block {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+
+.card-style {
+  transition: box-shadow .5s ease-in-out;
+  box-shadow: none; 
+  flex-direction: row;
+}
+
+
+.card-with-shadow {
+  box-shadow: 0 0 20px 10px rgba(255, 140, 0, 0.5);
+}
+
+
+.button-details {
+  background-color: #8B4513; 
+  color: white;
+}
+
+
+.button-buy {
+  background-color: #FF8C00; 
+  color: white;
+}
+
+
+.button-na {
+  background-color: #A9A9A9; 
+  color: white;
+}
+
+
+
+/* By default, external buttons for large screens */
+.buttons-block {
+  margin-left: 20px;
+}
+
+/* Internal buttons for Medium and smaller */
+@media (max-width: 992px) {
+  .buttons-block {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .card-style {
+    flex-direction: column;
+    align-items: center;
+  }
+  .img-size {
+    width: 50%;
+  }
+  .card-size {
+    width: 85%;
+  }
+}
+
+@media (max-width: 576px) {
+  .card-style {
+    flex-direction: column;
+    align-items: center;
+  }
+  .img-size {
+    display: none;
+  }
+  .card-title-country {
+    display: none;
+  }
+  .card-title-warranty {
+    display: none;
+  }
+  .card-text {
+    display: none;
+  }
+}
+
+
+
+
+

@@ -1,0 +1,30 @@
+.style-card {
+  transition: box-shadow 0.5s ease-in-out;
+  box-shadow: none;
+}
+
+.img-shadow {
+  box-shadow: 0 0 20px 10px rgba(255, 140, 0, 0.5);
+}
+
+.img-style {
+  width: 25%;
+}
+
+
+.button-buy {
+  background-color: #FF8C00; 
+  color: white;
+}
+
+
+.button-na {
+  background-color: #A9A9A9; 
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .img-style {
+    width: 50%;
+  }
+}

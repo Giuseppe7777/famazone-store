@@ -1,26 +1,101 @@
-<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
+<!-- <div class="row">
+  <div *ngFor="let product of products; let i = index" class="card-wrapper d-flex w-100">
+    <div class="card card-style my-4 mx-auto d-flex flex-row w-75" [ngClass]="{ 'card-with-shadow': isAddedToCart[i] }">
+      <img
+        [src]="product.profileImageUrl"
+        class="card-img-top img-fluid img-size w-25"
+        alt="..."
+      />
+      <div class="card-body card-size w-25">
+        <h5 class="card-title">Brand: {{ product.brand }}</h5>
+        <h5 class="card-title">Model: {{ product.productName }}</h5>
+        <h6 class="card-title">Country: {{ product.originCountry }}</h6>
+        <p class="card-title">Warranty: {{ product.warrantyYears }} years</p>
+        <p class="card-text">
+          Description: Some quick example text to build on the card title and
+          make up the bulk of the card's content.
+        </p>
+        <h6 class="card-title">
+          Price: {{ product.price | currency : "EUR" }}
+        </h6>
+      </div>
+    </div>
+    <div class="buttons-block d-flex flex-column justify-content-start my-4">
+      <button
+        routerLink="/products/{{ i }}"
+        class="btn button-details btn-products"
+      >
+        Details
+      </button>
 
-  @for(product of products; track $index){
+      
+      <button
+        (click)="addToCart(product, i)" 
+        class="btn" 
+        [ngClass]="{'button-buy': product.available, 'button-na': !product.available}"
+        [disabled]="!product.available">
+        {{ product.available ? "I BUY IT" : "N / A" }}
+      </button>
 
-    <div>
-      <div class="card my-4 mx-auto">
-        <img 
-          [src]="product.profileImageUrl" 
-          class="card-img-top img-fluid" 
-          alt="..."
-        >
-        <div class="card-body">
-          <h5 class="card-title">Brand: {{ product.brand }}</h5>
-          <h5 class="card-title">Model: {{ product.productName }}</h5>
-          <h6 class="card-title">Country: {{ product.originCountry }}</h6>
-          <p class="card-title">Warranty: {{ product.warrantyYears }} years</p>
-          <p class="card-text">Description: Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <h6 class="card-title">Price: {{ product.price | currency: 'EUR'}}</h6>
-        </div>
-        <button routerLink="/products/{{$index}}" class="btn btn-success">Details</button>
+    </div>
+  </div>
+</div> -->
+
+
+<div class="row">
+  <div *ngFor="let product of products; let i = index" class="card-wrapper d-flex w-100">
+    <div class="card card-style my-4 mx-auto d-flex w-75" [ngClass]="{ 'card-with-shadow': isAddedToCart[i] }">
+      <img
+        [src]="product.profileImageUrl"
+        class="card-img-top img-fluid img-size"
+        alt="..."
+      />
+      <div class="card-body card-size">
+        <h5 class="card-title-brand">Brand: {{ product.brand }}</h5>
+        <h5 class="card-title-model">Model: {{ product.productName }}</h5>
+        <h6 class="card-title-country">Country: {{ product.originCountry }}</h6>
+        <p class="card-title-warranty">Warranty: {{ product.warrantyYears }} years</p>
+        <p class="card-text">Description: {{ product.description }}</p>
+        <h6 class="card-title-price">Price: {{ product.price | currency: 'EUR' }}</h6>
+        
+        <!-- add space for buttons in the card when the screen is smaller than 992px. -->
+        <ng-container *ngIf="isMediumScreen">
+          <div class="buttons-block d-flex flex-column justify-content-start my-4">
+            <button
+              routerLink="/products/{{ i }}"
+              class="btn button-details btn-products"
+            >
+              Details
+            </button>
+            <button
+              (click)="addToCart(product, i)" 
+              class="btn" 
+              [ngClass]="{'button-buy': product.available, 'button-na': !product.available}"
+              [disabled]="!product.available">
+              {{ product.available ? "I BUY IT" : "N / A" }}
+            </button>
+          </div>
+        </ng-container>
       </div>
     </div>
 
-  }
-
+    <!-- block with buttons that will be outside the card on large screens -->
+    <ng-container *ngIf="!isMediumScreen">
+      <div class="buttons-block d-flex flex-column justify-content-start my-4">
+        <button
+          routerLink="/products/{{ i }}"
+          class="btn button-details btn-products"
+        >
+          Details
+        </button>
+        <button
+          (click)="addToCart(product, i)" 
+          class="btn" 
+          [ngClass]="{'button-buy': product.available, 'button-na': !product.available}"
+          [disabled]="!product.available">
+          {{ product.available ? "I BUY IT" : "N / A" }}
+        </button>
+      </div>
+    </ng-container>
+  </div>
 </div>
