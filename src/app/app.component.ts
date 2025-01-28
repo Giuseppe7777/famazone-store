@@ -7,21 +7,21 @@ import { Component, AfterViewInit } from '@angular/core';
 })
 
 export class AppComponent implements AfterViewInit{
-  title = 'famazon-store';
+  title = 'famazon-store'; 
 
   ngAfterViewInit() {
-    // Отримуємо елементи меню та основного контенту
+    // Get the elements of the menu and the main content
     const navbarMenu = document.getElementById('navbarSupportedContent');
     const mainContent = document.querySelector('.main-content') as HTMLElement;
 
-    // Слухаємо подію відкриття меню
+    // Listen to the menu opening event
     navbarMenu?.addEventListener('shown.bs.collapse', () => {
-      mainContent.style.paddingTop = '220px';  // Змінюємо відступ зверху
+      mainContent.style.paddingTop = '220px';  // Change the indentation from above
     });
 
-    // Слухаємо подію закриття меню
+    // Listen to the menu closing event
     navbarMenu?.addEventListener('hidden.bs.collapse', () => {
-      mainContent.style.paddingTop = '100px';  // Повертаємо стандартний відступ
+      mainContent.style.paddingTop = '100px';  // Return the standard indentation
     });
 
     

@@ -1,30 +1,3 @@
-// import { Component } from '@angular/core';
-// import { ELECTRONICS_PRODUCTS } from '../shared/my-products';
-// import { ProductModel } from '../shared/my-products.model';
-// import { CartService } from '../cart.service';
-
-// @Component({
-//   selector: 'app-products',
-//   templateUrl: './products.component.html',
-//   styleUrl: './products.component.css'
-// })
-// export class ProductsComponent {
-//   isAddedToCart: boolean[] = [];
-
-//   products : ProductModel[] = ELECTRONICS_PRODUCTS;
-
-//   constructor(private cartService: CartService) {}
-
-//   addToCart(product: ProductModel, index: number) {
-//     this.cartService.onAddToCart(product);
-
-//     this.isAddedToCart[index] = true;
-
-//     setTimeout(() => {
-//       this.isAddedToCart[index] = false;
-//     }, 500);
-//   }
-// }
 
 import { Component, HostListener } from '@angular/core';
 import { ELECTRONICS_PRODUCTS } from '../shared/my-products';
